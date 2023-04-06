@@ -26,10 +26,10 @@ function search(input) {
         GiphyAJAXCall.send();
 
         GiphyAJAXCall.addEventListener('load',function(e){
-            console.log(e.target.response)
+         
             
             var data = e.target.response;
-            console.log(data)
+
             pushToDOM(data);
   
   });
@@ -46,7 +46,7 @@ function pushToDOM(data) {
         
     for (let index = 0; index < 50; index++) {
         var response = JSON.parse(data);
-        
+        console.log(response)
         var imageUrls = response.data[index]
         var imageUrl = imageUrls.images.fixed_height.webp
         console.log(imageUrl);
